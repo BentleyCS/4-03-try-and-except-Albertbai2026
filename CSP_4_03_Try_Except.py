@@ -9,7 +9,16 @@ def sum(arr : list) -> int:
     :return:
     """
     pass
-
+def sum(arr: list) -> int:
+    total = 0
+    for item in arr:
+        try:
+            total += item
+        except TypeError:
+            # skip non-numbers
+            pass
+    return total
+    
 def cleanData(rawData : list) ->list:
     """
     modify the function such that it takes in a list as an argument will return a new list that
@@ -18,6 +27,16 @@ def cleanData(rawData : list) ->list:
     :return:
     """
     pass
+
+def cleanData(rawData: list) -> list:
+    cleaned = []
+    for item in rawData:
+        try:
+            cleaned.append(float(item))
+        except (ValueError, TypeError):
+            pass
+    return cleaned
+    
 def unreliableCalculator(divisors : list) -> list:
     """
     Modify the function such that it takes in a list as an argument and returns a new list where each
@@ -27,9 +46,16 @@ def unreliableCalculator(divisors : list) -> list:
     :param divisors:
     :return:
     """
+def unreliableCalculator(divisors: list) -> list:
+    results = []
+    for item in divisors:
+        try:
+            results.append(100 / item)
+        except Exception as e:
+            results.append(type(e).__name__)
+    return results    
     pass
-
-
+    
 def upperAll(arr : list) -> None:
     """
     Modiy the function such that is uppercases all strings within the given argument list.
@@ -42,7 +68,12 @@ def upperAll(arr : list) -> None:
     print(x)
     x = x.upper()
     print(x)
-
+def upperAll(arr: list) -> None:
+    for i in range(len(arr)):
+        try:
+            arr[i] = arr[i].upper()
+        except AttributeError:
+            pass
 
 def firstItems(arr : list) -> list:
     """
@@ -54,5 +85,13 @@ def firstItems(arr : list) -> list:
     :param arr:
     :return:
     """
+    def firstItems(arr: list) -> list:
+    result = []
+    for item in arr:
+        try:
+            result.append(item[0])
+        except Exception:
+            result.append(item)
+    return result
     pass
 
