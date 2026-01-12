@@ -8,14 +8,12 @@ def sum(arr : list) -> int:
     :param arr:
     :return:
     """
-    pass
-def sum(arr: list) -> int:
+ def sum(arr: list) -> int:
     total = 0
     for item in arr:
         try:
             total += item
         except TypeError:
-            # skip non-numbers
             pass
     return total
     
@@ -26,8 +24,6 @@ def cleanData(rawData : list) ->list:
     :param rawData:
     :return:
     """
-    pass
-
 def cleanData(rawData: list) -> list:
     cleaned = []
     for item in rawData:
@@ -36,7 +32,7 @@ def cleanData(rawData: list) -> list:
         except (ValueError, TypeError):
             pass
     return cleaned
-    
+
 def unreliableCalculator(divisors : list) -> list:
     """
     Modify the function such that it takes in a list as an argument and returns a new list where each
@@ -53,7 +49,7 @@ def unreliableCalculator(divisors: list) -> list:
             results.append(100 / item)
         except Exception as e:
             results.append(type(e).__name__)
-    return results    
+    return results
     pass
     
 def upperAll(arr : list) -> None:
@@ -85,7 +81,7 @@ def firstItems(arr : list) -> list:
     :param arr:
     :return:
     """
-    def firstItems(arr: list) -> list:
+  def firstItems(arr: list) -> list:
     result = []
     for item in arr:
         try:
@@ -93,5 +89,3 @@ def firstItems(arr : list) -> list:
         except Exception:
             result.append(item)
     return result
-    pass
-
